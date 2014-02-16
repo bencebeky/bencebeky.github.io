@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en" />
+  <link rel="icon" type="image/x-icon" href="unicycle.ico" />
+  <link href="http://fonts.googleapis.com/css?family=Quando" rel="stylesheet" type="text/css" />
+  <link href="common.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="resume.css" rel="stylesheet" type="text/css" media="all" />
+  <script type="text/javascript" src="switch.js"></script>
+  <script type="text/javascript" src="w3clink.js"></script>
+  <title>résumé &ndash; Bence Béky</title>
+</head>
+<body>
+<div id="everything">
+  <div id="menubar"><ul>
+    <li><a class="menuitem" href="index.html">about</a></li>
+    <li><a class="activemenuitem">résumé</a></li>
+    <li><a class="menuitem" href="download.html">download</a></li>
+  </ul></div>
+  <div id="menuline"></div>
+
+<h1 class="print">Résumé &ndash; Bence Béky</h1>
+
+<h2>Education</h2>
+
+<p class="degree">PhD in Astronomy and Astrophysics at Harvard University <span class="time">expected 2014 May</span></p>
+<p class="degree">MSc in Mathematics at Université de Rennes 1, France <span class="time">2009</span></p>
+<p class="degree">MSc in Engineering-Physics at Budapest University of Technology, Hungary <span class="time">2008</span></p>
+
+<h2>Research Experience</h2>
+
+<p>My current research involves analyzing <span class="emph">large datasets</span> from the Hubble and Kepler space telescopes. I use <span class="tt">Python</span> for mining the data, but I rewrite some modules in <span class="tt">C</span> in the interest of speed.</p>
+
+<p>For three years, I was the <span class="emph">system administrator</span> on more than 40 computers controlling telescopes on five continents. Besides keeping the software in good shape, I was also in charge of acquiring new configurations and spare parts. I frequently traveled to sites for hardware installation and maintenance.</p>
+
+<p>For my <a href="download.html#theses">master's thesis</a> in mathematics, I performed numerical integrations of ordinary differential equations in <span class="tt">C</span> using the <span class="tt">GNU Scientific Library</span>, besides theoretical research.</p>
+
+<p>For my <a href="download.html#theses">master's thesis</a> in physics, I analyzed interference pattern photographs of a laser-illuminated membrane using the <span class="tt">Matlab Image Processing Toolbox</span> to measure its deformation.</p>
+
+<p>I have <a href="http://adsabs.harvard.edu/cgi-bin/basic_connect?qsearch=^b_beky">three first-author papers</a> that have been published in the Astrophysical Journal and the Astronomy Journal. I am a co-author on <a href="http://adsabs.harvard.edu/cgi-bin/basic_connect?qsearch=b_beky">21 other papers</a> published in peer-reviewed astrophysics and astronomy journals. I also presented four posters at international physics and astrophysics conferences.</p>
+
+<h2>Projects</h2>
+
+<p>In 2001, I designed and built a <span class="emph">remote velocity/position sensor device</span> for classroom demonstrations. It consisted of a quartz crystal based sound generator that can be fixed to a pendulum, a car, or other moving object, and a computer with a microphone. I wrote a program that measures the phase of the sound in small time windows, thus calculating the displacement with respect to the previous window, and used numerical differentiation to calculate velocity and acceleration. I used <span class="tt">gnuplot</span> to plot the results. I was awarded Accentuated Honorable Mention at the Hungarian National Youth Science and Innovation Competition.</p>
+
+<p><img class="imageright" src="clock_small.png" alt="digital clock" />
+Around the same time, I designed from scratch and built a digital wall clock based on the Microchip PIC16F627 <span class="emph">microcontroller</span>. I drew the PCB design using xfig, printed in on a transparency, photographed with a household UV light on a copper clad board sprayed with photosensitive material, etched it in the bathroom, and drilled the holes and soldered the parts on my desk. The clock is still runing, using a wall DC adapter. When the power goes out, the controller keeps track of the time using a built-in battery, without powering the LEDs. I wrote the control program in Assembly. It supports 12/24 hour formats, and dimming using pulse width modulation.</p>
+
+<p><img class="imageright" src="infra_small.png" alt="IrDA module"/>I have also built two infrared modules based on schematics I found on the Internet: The first one was a receiver that attached to the RS-232 serial port of the computer and was used to control the media player with a regular TV or satellite box remote controller via the software <a href="http://lirc.org/">lirc</a>. The second one, pictured here, was a transceiver that attached directly to the IrDA connector of my motherboard, and I used it to transfer photos, ringtones, and backup my contacts on my cell phone.</p>
+
+<p>My Android app <a href="https://f-droid.org/repository/browse/?fdfilter=MMSKeeper%26fdid=edu.harvard.android.mmskeeper">MMSKeeper</a> is available from the F-Droid free and open source repository. It allows the user to switch data traffic on and off, while still being able to send and receive multimedia messages (MMS). This is achieved by rewringing the TYPE field of the current Access Point Name, and is useful for users with a limited data plan to prevent background apps from inadvertently generatic data traffic.</p>
+
+<p>I have created two <span class="emph">websites</span>. For <a href="http://naya.hu/">naya.hu</a>, I used a professional designer's layout, but replaced the Adobe Dreamweaver-generated inner workings with much cleaner, W3C compliant code, and built an engine in <span class="tt">PHP</span>. I wrote <a href="https://www.cfa.harvard.edu/~bbeky/">my personal website</a> entirely from scratch.</p>
+
+<p>You can find some of my recent coding projects under <a href="https://github.com/bencebeky">my github account</a>.</p>
+
+<p>In 2006, I <span class="emph">welded</span> two used road bike frames together to build a tandem. Professional welders at my university shop showed me how to use their tungsten inert gas welding equipment, but were kind enough to let me do most of the work. The most difficult part was to find a distributor that could provide me with two sticks of filler material, which is usually sold in boxes of many kilograms.</p>
+
+<h2>International competitions</h2>
+
+<p>I won first prize four times (2005, 2007, 2008, 2012) at the Rudolf Ortvay <span class="emph">International Physics Competiton</span> for University Students.</p>
+<p>I won Bronze Medal (82th place, 2001) and Gold Medal (14th place, 2002) at the <span class="emph">International Physics Olimpiad</span>.</p>
+<p>I won second prize (2004), second prize (2005), and third prize (2006) at the <span class="emph">International Mathematics Competition</span> for University Students.</p>
+
+<h2>Leadership</h2>
+
+<p>I <span class="emph">lectured</span> one section (twenty students) of Math 21a, an undergraduate calculus course at Harvard.
+I lead <span class="emph">problem sessions</span> for Astro 150, a graduate astrophysics course at Harvard; for two undergraduate probability theory courses in Hungary; and for an undergraduate course in automata theory in Finland.</p>
+
+<p>I helped <span class="emph">coach</span> a team for the Hong Kong Primary World Mathematics Contest; Hungarian teams for the International Mathematics Competition; and the Finnish and Estonian teams for the International Physics Olimpiad in 2005.</p>
+
+<p>I served on the <span class="emph">jury</span> for NYIFFF, a Hungarian national university physics competition.</p>
+
+  <div id="footerline"></div>
+  <div id="footerbar">
+    <h1>Bence Béky</h1>
+    <ul>
+      <li><a id="w3cvalidator" href="http://validator.w3.org" title="W3C validator">W3C validator</a></li>
+      <li><a class="transition" id="stackoverflow" href="http://stackoverflow.com/users/2375006/bence" title="stackoverflow">stackoverflow</a></li>
+      <li><a class="transition" id="github" href="https://github.com/bencebeky" title="github">github</a></li>
+      <li><a class="transition" id="linkedin" href="https://www.linkedin.com/in/bencebeky" title="linkedin">linkedin</a></li>
+      <li><a class="transition" id="email" href="mailto:zsebkecske--kukac--gmail--pont--com" title="e-mail">e-mail</a></li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

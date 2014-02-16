@@ -1,0 +1,8 @@
+p {text-align: justify;}
+p a:link, p a:visited {color: #4080d0;}
+p a:hover {color: #306090;}
+span.time {float: right;}
+span.emph {font-weight: bold;}
+span.tt {font-weight: bold;}
+img.imageright {float: right; margin-left: 2em;}
+@media print {.imageright {display: none;} p a:link, p a:visited {color: black;}}
