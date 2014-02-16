@@ -33,10 +33,10 @@ div#footerbar a.transition {margin-left: 10px; margin-right: 10px; width: 32px; 
   -moz-transition: color 0.5s ease, opacity 0.5s ease;
 }
 div#footerbar a.transition:hover {opacity: 1.00;}
-div#footerbar a#email {background: url("img/icons32.png") 0px no-repeat;}
-div#footerbar a#github {background: url("img/icons32.png") -32px no-repeat;}
-div#footerbar a#linkedin {background: url("img/icons32.png") -64px no-repeat;}
-div#footerbar a#stackoverflow {background: url("img/icons32.png") -96px no-repeat;}
+div#footerbar a#email {background: url("../img/icons32.png") 0px no-repeat;}
+div#footerbar a#github {background: url("../img/icons32.png") -32px no-repeat;}
+div#footerbar a#linkedin {background: url("../img/icons32.png") -64px no-repeat;}
+div#footerbar a#stackoverflow {background: url("../img/icons32.png") -96px no-repeat;}
 div#footerbar a#w3cvalidator {background: url("http://www.w3.org/Icons/valid-xhtml10-blue") no-repeat; width: 88px; margin-left: 50px; margin-right: 10px;}
 
 @media print {#menubar, #menuline, #footerline, #footerbar {display: none;}}
