@@ -1,15 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
+<head profile="http://www.w3.org/2005/10/profile">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Language" content="en" />
-  <link rel="icon" type="image/x-icon" href="unicycle.ico" />
+  <link rel="icon" type="image/x-icon" href="img/unicycle.ico" />
   <link href="http://fonts.googleapis.com/css?family=Quando" rel="stylesheet" type="text/css" />
-  <link href="common.css" rel="stylesheet" type="text/css" media="all" />
-  <link href="resume.css" rel="stylesheet" type="text/css" media="all" />
-  <script type="text/javascript" src="switch.js"></script>
-  <script type="text/javascript" src="w3clink.js"></script>
+  <link href="css/common.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="css/resume.css" rel="stylesheet" type="text/css" media="all" />
+  <script type="text/javascript" src="js/switch.js"></script>
+  <script type="text/javascript" src="js/w3clink.js"></script>
   <title>résumé &ndash; Bence Béky</title>
 </head>
 <body>
@@ -45,14 +45,14 @@
 
 <p>In 2001, I designed and built a <span class="emph">remote velocity/position sensor device</span> for classroom demonstrations. It consisted of a quartz crystal based sound generator that can be fixed to a pendulum, a car, or other moving object, and a computer with a microphone. I wrote a program that measures the phase of the sound in small time windows, thus calculating the displacement with respect to the previous window, and used numerical differentiation to calculate velocity and acceleration. I used <span class="tt">gnuplot</span> to plot the results. I was awarded Accentuated Honorable Mention at the Hungarian National Youth Science and Innovation Competition.</p>
 
-<p><img class="imageright" src="clock_small.png" alt="digital clock" />
+<p><img class="imageright" src="img/clock_small.png" alt="digital clock" />
 Around the same time, I designed from scratch and built a digital wall clock based on the Microchip PIC16F627 <span class="emph">microcontroller</span>. I drew the PCB design using xfig, printed in on a transparency, photographed with a household UV light on a copper clad board sprayed with photosensitive material, etched it in the bathroom, and drilled the holes and soldered the parts on my desk. The clock is still runing, using a wall DC adapter. When the power goes out, the controller keeps track of the time using a built-in battery, without powering the LEDs. I wrote the control program in Assembly. It supports 12/24 hour formats, and dimming using pulse width modulation.</p>
 
-<p><img class="imageright" src="infra_small.png" alt="IrDA module"/>I have also built two infrared modules based on schematics I found on the Internet: The first one was a receiver that attached to the RS-232 serial port of the computer and was used to control the media player with a regular TV or satellite box remote controller via the software <a href="http://lirc.org/">lirc</a>. The second one, pictured here, was a transceiver that attached directly to the IrDA connector of my motherboard, and I used it to transfer photos, ringtones, and backup my contacts on my cell phone.</p>
+<p><img class="imageright" src="img/infra_small.png" alt="IrDA module"/>I have also built two infrared modules based on schematics I found on the Internet: The first one was a receiver that attached to the RS-232 serial port of the computer and was used to control the media player with a regular TV or satellite box remote controller via the software <a href="http://lirc.org/">lirc</a>. The second one, pictured here, was a transceiver that attached directly to the IrDA connector of my motherboard, and I used it to transfer photos, ringtones, and backup my contacts on my cell phone.</p>
 
 <p>My Android app <a href="https://f-droid.org/repository/browse/?fdfilter=MMSKeeper%26fdid=edu.harvard.android.mmskeeper">MMSKeeper</a> is available from the F-Droid free and open source repository. It allows the user to switch data traffic on and off, while still being able to send and receive multimedia messages (MMS). This is achieved by rewringing the TYPE field of the current Access Point Name, and is useful for users with a limited data plan to prevent background apps from inadvertently generatic data traffic.</p>
 
-<p>I have created two <span class="emph">websites</span>. For <a href="http://naya.hu/">naya.hu</a>, I used a professional designer's layout, but replaced the Adobe Dreamweaver-generated inner workings with much cleaner, W3C compliant code, and built an engine in <span class="tt">PHP</span>. I wrote <a href="https://www.cfa.harvard.edu/~bbeky/">my personal website</a> entirely from scratch.</p>
+<p>I have created two <span class="emph">websites</span>. For <a href="http://naya.hu/">naya.hu</a>, I used a professional designer's layout, but replaced the Adobe Dreamweaver-generated inner workings with much cleaner, W3C compliant code, and built an engine in <span class="tt">PHP</span>. I wrote <a href="http://bencebeky.github.io">my personal website</a> entirely from scratch.</p>
 
 <p>You can find some of my recent coding projects under <a href="https://github.com/bencebeky">my github account</a>.</p>
 
