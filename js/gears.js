@@ -1,8 +1,20 @@
 function plotFigure() {
-  var chainrings = $("#chainrings").val().split(",");
-  var sprockets = $("#sprockets").val().split(",");
-  var circumference = 210;
-  var circumferenceUnit = "cm";
+  function inputToIntArray(element) {
+    var strings = $(element).val().split(",");
+    var answer = new Array(strings.length);
+    for (var i = 0; i < strings.length; i++)
+      answer[i] = parseInt(strings[i]);
+    return answer;
+  }
+  var chainrings = inputToIntArray("#chainrings");
+  var sprockets = inputToIntArray("#sprockets");
+  var circumferenceArray = $("#circumference").val().split(" ");
+  var circumference = parseFloat(circumferenceArray[0]);
+  var circumferenceUnit;
+  if (circumferenceArray.length > 1)
+    circumferenceUnit = circumferenceArray[1];
+  else
+    circumferenceUnit = "cm";
   var xArray = new Array(chainrings.length);
   var plotdata = [];
   var xminvalue = Infinity;
@@ -78,7 +90,32 @@ function plotFigure() {
   $("#gears-plot").bind("plothover", tooltipShow);
 }
 
-$("#chainrings" ).on("blur", plotFigure);
-$("#sprockets" ).on("blur", plotFigure);
-$("#circumference" ).on("blur", plotFigure);
+function chainringListSelect(event) {
+  $("#sprockets").val($("#sprocket-list").val());
+  if (event)
+    plotFigure();
+}
+
+function sprocketListSelect(event) {
+  $("#sprockets").val($("#sprocket-list").val());
+  if (event)
+    plotFigure();
+}
+
+function circumferenceListSelect(event) {
+  $("#circumference").val($("#circumference-list").val() + " mm");
+  if (event)
+    plotFigure();
+}
+
+$("#chainring-list").on("change", chainringListSelect);
+$("#sprocket-list").on("change", sprocketListSelect);
+$("#circumference-list").on("change", circumferenceListSelect);
+$("#chainrings").on("change", plotFigure);
+$("#sprockets").on("change", plotFigure);
+$("#circumference" ).on("change", plotFigure);
+
+chainringListSelect();
+sprocketListSelect();
+circumferenceListSelect();
 plotFigure();
