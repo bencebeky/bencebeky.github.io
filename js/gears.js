@@ -3,14 +3,40 @@ $(function() {
   var circumferenceUnit = "cm";
   var chainrings = [28, 38, 48];
   var sprockets = [11, 13, 15, 18, 21, 24, 28, 32];
+  var xArray = new Array(chainrings.length);
   var plotdata = [];
+  var xminvalue = Infinity;
+  var xmaxvalue = 0;
   var line;
-  var color = "#4080d0"; 
+  var color = "#4080d0";
+  for (var c = 0; c < chainrings.length; c++) {
+    line = [];
+    xArray[c] = new Array(sprockets.length);
+    for (var s = 0; s < sprockets.length; s++) {
+      xArray[c][s] = (circumference * chainrings[c] / sprockets[s]);
+      line.push([xArray[c][s], chainrings[c]]);
+      if (xArray[c][s] < xminvalue)
+        xminvalue = xArray[c][s];
+      if (xArray[c][s] > xmaxvalue)
+        xmaxvalue = xArray[c][s];
+    }
+    plotdata.push({data: line, color: "#4080d0"});
+  }
+  for (var s = 0; s < sprockets.length; s++) {
+    line = [];
+    for (var c = 0; c < chainrings.length; c++) {
+      line.push([xArray[c][s], chainrings[c]]);
+    }
+    plotdata.push({data: line, color: "#4080d0"});
+  }
+
   var plotoptions = {
     xaxis: {
       transform: function (v) {return Math.log(v);},
       inverseTransform: function (v) {return Math.exp(v);},
-      font: {color: color}
+      font: {color: color},
+      min: 0.91 * xminvalue,
+      max: 1.1 * xmaxvalue
     },
     yaxis: {
       transform: function (v) {return Math.log(v);},
@@ -23,20 +49,7 @@ $(function() {
     },
     grid: {color: color, hoverable: true}
   };
-  for (var s = 0; s < sprockets.length; s++) {
-    line = [];
-    for (var c = 0; c < chainrings.length; c++) {
-      line.push([circumference * chainrings[c] / sprockets[s], chainrings[c]]);
-    }
-    plotdata.push({data: line, color: "#4080d0"});
-  }
-  for (var c = 0; c < chainrings.length; c++) {
-    line = [];
-    for (var s = 0; s < sprockets.length; s++) {
-      line.push([circumference * chainrings[c] / sprockets[s], chainrings[c]]);
-    }
-    plotdata.push({data: line, color: "#4080d0"});
-  }
+
   var plot = $.plot("#gears-plot", plotdata, plotoptions);
 
   $("<div id='tooltip'></div>").css({
@@ -50,8 +63,11 @@ $(function() {
 
   function tooltipShow(event, pos, item) {
     if (item) {
-      var x = item.datapoint[0].toFixed(2), y = item.datapoint[1].toFixed(2);
-      $("#tooltip").html("Gear " + (chainrings.indexOf(~~y)+1)  + " " + y + " " + circumferenceUnit)
+      var x = item.datapoint[0];
+      var y = item.datapoint[1];
+      var c = chainrings.indexOf(y);
+      var s = xArray[c].indexOf(x);
+      $("#tooltip").html("Gear " + (c+1)  + "-" + (s+1) + ": " + x.toFixed(0) + " " + circumferenceUnit)
               .css({top: item.pageY+5, left: item.pageX+5})
               .fadeIn(200);
     } else {
