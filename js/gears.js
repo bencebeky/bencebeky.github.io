@@ -1,8 +1,8 @@
-$(function() {
+function plotFigure() {
+  var chainrings = $("#chainrings").val().split(",");
+  var sprockets = $("#sprockets").val().split(",");
   var circumference = 210;
   var circumferenceUnit = "cm";
-  var chainrings = [28, 38, 48];
-  var sprockets = [11, 13, 15, 18, 21, 24, 28, 32];
   var xArray = new Array(chainrings.length);
   var plotdata = [];
   var xminvalue = Infinity;
@@ -76,4 +76,9 @@ $(function() {
   }
 
   $("#gears-plot").bind("plothover", tooltipShow);
-});
+}
+
+$("#chainrings" ).on("blur", plotFigure);
+$("#sprockets" ).on("blur", plotFigure);
+$("#circumference" ).on("blur", plotFigure);
+plotFigure();
