@@ -91,7 +91,7 @@ function plotFigure() {
 }
 
 function chainringListSelect(event) {
-  $("#sprockets").val($("#sprocket-list").val());
+  $("#chainrings").val($("#chainring-list").val());
   if (event)
     plotFigure();
 }
@@ -103,9 +103,104 @@ function sprocketListSelect(event) {
 }
 
 function circumferenceListSelect(event) {
-  $("#circumference").val($("#circumference-list").val() + " mm");
-  if (event)
-    plotFigure();
+  var circumference = $("#circumference-list").val();
+  var circumferenceArray = $("#circumference").val().split(" ");
+  var circumferenceUnit = "mm";
+  if (circumferenceArray.length > 1) {
+    circumferenceUnit = circumferenceArray[1];
+    if (circumferenceUnit.toLowerCase().search("cm") != -1) {
+      circumference /= 10.0;
+      circumference = circumference.toFixed(1);
+    } else if (circumferenceUnit.toLowerCase().search("in") != -1) {
+      circumference /= 25.4;
+      circumference = circumference.toFixed(1);
+    } else {
+      circumferenceUnit = "mm";
+    }
+  }
+  $("#circumference").val(circumference + " " + circumferenceUnit);
+  if (event) {
+    circumferenceChange();
+  }
+}
+
+function unitCm(event) {
+  $("#cm").css("background-color", "#4080d0");
+  $("#mm").css("background-color", "#ffffff");
+  $("#in").css("background-color", "#ffffff");
+  var circumferenceArray = $("#circumference").val().split(" ");
+  var circumference = parseFloat(circumferenceArray[0]);
+  var circumferenceUnit;
+  if (circumferenceArray.length > 1) {
+    circumferenceUnit = circumferenceArray[1];
+    if (circumferenceUnit.toLowerCase().search("mm") != -1)
+      circumference /= 10.0;
+    else if (circumferenceUnit.toLowerCase().search("in") != -1)
+      circumference *= 2.54;
+  }
+  $("#circumference").val(circumference.toFixed(1) + " cm");
+  plotFigure();
+}
+
+function unitMm(event) {
+  $("#cm").css("background-color", "#ffffff");
+  $("#mm").css("background-color", "#4080d0");
+  $("#in").css("background-color", "#ffffff");
+  var circumferenceArray = $("#circumference").val().split(" ");
+  var circumference = parseFloat(circumferenceArray[0]);
+  var circumferenceUnit;
+  if (circumferenceArray.length > 1) {
+    circumferenceUnit = circumferenceArray[1];
+    if (circumferenceUnit.toLowerCase().search("cm") != -1)
+      circumference *= 10.0;
+    else if (circumferenceUnit.toLowerCase().search("in") != -1)
+      circumference *= 25.4;
+  }
+  $("#circumference").val(circumference.toFixed(1) + " mm");
+  plotFigure();
+}
+
+function unitIn(event) {
+  $("#cm").css("background-color", "#ffffff");
+  $("#mm").css("background-color", "#ffffff");
+  $("#in").css("background-color", "#4080d0");
+  var circumferenceArray = $("#circumference").val().split(" ");
+  var circumference = parseFloat(circumferenceArray[0]);
+  var circumferenceUnit;
+  if (circumferenceArray.length > 1) {
+    circumferenceUnit = circumferenceArray[1];
+    if (circumferenceUnit.toLowerCase().search("cm") != -1)
+      circumference /= 2.54;
+    else if (circumferenceUnit.toLowerCase().search("mm") != -1)
+      circumference /= 25.4;
+  }
+  $("#circumference").val(circumference.toFixed(1) + " in");
+  plotFigure();
+}
+
+function circumferenceChange(event) {
+  var circumferenceArray = $("#circumference").val().split(" ");
+  var circumferenceUnit = null;
+  if (circumferenceArray.length > 1)
+    circumferenceUnit = circumferenceArray[1];
+  if (circumferenceUnit.toLowerCase().search("cm") != -1) {
+    $("#cm").css("background-color", "#4080d0");
+    $("#mm").css("background-color", "#ffffff");
+    $("#in").css("background-color", "#ffffff");
+  } else if (circumferenceUnit.toLowerCase().search("mm") != -1) {
+    $("#cm").css("background-color", "#ffffff");
+    $("#mm").css("background-color", "#4080d0");
+    $("#in").css("background-color", "#ffffff");
+  } else if (circumferenceUnit.toLowerCase().search("in") != -1) {
+    $("#cm").css("background-color", "#ffffff");
+    $("#mm").css("background-color", "#ffffff");
+    $("#in").css("background-color", "#4080d0");
+  } else {
+    $("#cm").css("background-color", "#ffffff");
+    $("#mm").css("background-color", "#ffffff");
+    $("#in").css("background-color", "#ffffff");
+  }
+  plotFigure();
 }
 
 $("#chainring-list").on("change", chainringListSelect);
@@ -113,9 +208,12 @@ $("#sprocket-list").on("change", sprocketListSelect);
 $("#circumference-list").on("change", circumferenceListSelect);
 $("#chainrings").on("change", plotFigure);
 $("#sprockets").on("change", plotFigure);
-$("#circumference" ).on("change", plotFigure);
+$("#circumference" ).on("change", circumferenceChange);
+$("#cm" ).on("click", unitCm);
+$("#mm" ).on("click", unitMm);
+$("#in" ).on("click", unitIn);
 
 chainringListSelect();
 sprocketListSelect();
 circumferenceListSelect();
-plotFigure();
+circumferenceChange();

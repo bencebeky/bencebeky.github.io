@@ -1,3 +1,10 @@
 div#gears {width: 100%;}
 div#gears p {text-align: justify;}
-div#gears-plot {width: 100%; height: 320px;}
+div#gears-plot {clear: both; width: 100%; height: 320px;}
+div.input {float: left; width: 32%;}
+div.input select {display: block; margin-bottom: 7px;}
+div.input input {margin-bottom: 7px;}
+input#circumference {float: left; width: 140px;}
+div.unit {float: left; padding: 3px; border: 1px solid #4080d0; margin-left: -1px;}
+div#cm {border-radius: 7px 0px 0px 7px; margin-left: 1em;}
+div#in {border-radius: 0px 7px 7px 0px;}
