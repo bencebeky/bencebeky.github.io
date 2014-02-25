@@ -6,8 +6,8 @@ p a:hover {color: #306090;}
 div#everything {width: 800px; padding: 10px; margin-left: auto; margin-right: auto; margin-top: 10px;}
 div#menubar {height: 32px;}
 div#menubar ul {list-style-type: none; margin: 0px; padding: 0px;}
-div#menubar li {float: left; height: 32px; padding-left: 53px; padding-right: 53px;}
-a.activemenuitem, a.menuitem {padding-top: 6px; height: 26px; display: block; width: 160px; text-align: center; vertical-align: middle; font-size: 18px;}
+div#menubar li {float: left; height: 32px; padding-left: 35px; padding-right: 35px;}
+a.activemenuitem, a.menuitem {padding-top: 6px; height: 26px; display: block; width: 130px; text-align: center; vertical-align: middle; font-size: 18px;}
 a.activemenuitem {color: black; border-radius: 12px 12px 0px 0px;
   background-color: #4080d0; /* Old browsers */
   background-repeat: repeat-x; /* Repeat the gradient */
