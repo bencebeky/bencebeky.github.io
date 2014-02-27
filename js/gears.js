@@ -79,7 +79,7 @@ function plotFigure() {
       var y = item.datapoint[1];
       var c = chainrings.indexOf(y);
       var s = xArray[c].indexOf(x);
-      $("#tooltip").html("Gear " + (c+1)  + "-" + (s+1) + ": " + x.toFixed(0) + " " + circumferenceUnit)
+      $("#tooltip").html("Gear " + (c+1)  + "-" + (sprockets.length-s) + ": " + x.toFixed(0) + " " + circumferenceUnit)
               .css({top: item.pageY+5, left: item.pageX+5})
               .fadeIn(200);
     } else {
