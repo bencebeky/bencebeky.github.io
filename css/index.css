@@ -1,4 +1,5 @@
 div#about {width: 517px; float: left; padding-left: 15px;}
 p.about {text-align: justify;}
+p.defense {text-align: center;}
 div#photo {float: left; clear: right;}
 div#photo img {margin: 20px; width: 228px; height: 320px;}
